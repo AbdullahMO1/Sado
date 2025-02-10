@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "400808166018",
+    "project_id": "sado-3141f",
+    "storage_bucket": "sado-3141f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400808166018:android:ec445e998d4b416b822a9b",
+        "android_client_info": {
+          "package_name": "com.sado.ksa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl0V7WKY2AEbDJf55wAknkQDYDyXyScQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400808166018-euemu4gno5t0qm8n933ms842ncvnlnua.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sado.ksa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

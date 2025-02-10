@@ -1,0 +1,726 @@
+[   +2 ms] executing: sw_vers -productName
+[   +9 ms] Exit code 0 from: sw_vers -productName
+[        ] macOS
+[        ] executing: sw_vers -productVersion
+[   +6 ms] Exit code 0 from: sw_vers -productVersion
+[        ] 13.4.1
+[        ] executing: sw_vers -buildVersion
+[   +5 ms] Exit code 0 from: sw_vers -buildVersion
+[        ] 22F770820d
+[        ] executing: uname -m
+[   +1 ms] Exit code 0 from: uname -m
+[        ] arm64
+[   +2 ms] executing: sysctl hw.optional.arm64
+[   +2 ms] Exit code 0 from: sysctl hw.optional.arm64
+[        ] hw.optional.arm64: 1
+[  +56 ms] executing: sysctl hw.optional.arm64
+[   +2 ms] Exit code 0 from: sysctl hw.optional.arm64
+[        ] hw.optional.arm64: 1
+[        ] executing: /usr/bin/arch -arm64e xcrun xcodebuild -version
+[ +355 ms] Exit code 0 from: /usr/bin/arch -arm64e xcrun xcodebuild -version
+[        ] Xcode 14.3.1
+           Build version 14E300c
+[   +1 ms] executing: /usr/bin/arch -arm64e xcrun xcdevice list --timeout 5
+[   +2 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[  +20 ms] executing: /Users/fortoer/Library/Android/sdk/platform-tools/adb devices -l
+[        ] executing: /usr/bin/arch -arm64e xcrun xcdevice list --timeout 2
+[        ] /usr/bin/arch -arm64e xcrun simctl list devices booted iOS --json
+[        ] executing: /usr/bin/arch -arm64e xcrun simctl list devices booted iOS --json
+[   +1 ms] executing: /usr/bin/arch -arm64e xcrun simctl list devices booted
+[ +202 ms] Exit code 0 from: /usr/bin/arch -arm64e xcrun simctl list devices booted
+[        ] == Devices ==
+           -- iOS 16.4 --
+               iPhone 12 Pro (61410EF0-8FF7-4E3D-B36C-793FF0BAB303) (Booted)
+[  +24 ms] List of devices attached
+[  +95 ms] {
+             "devices" : {
+               "com.apple.CoreSimulator.SimRuntime.iOS-16-4" : [
+                 {
+                   "lastBootedAt" : "2024-01-25T18:57:22Z",
+                   "dataPath" : "\/Users\/fortoer\/Library\/Developer\/CoreSimulator\/Devices\/61410EF0-8FF7-4E3D-B36C-793FF0BAB303\/data",
+                   "dataPathSize" : 785735680,
+                   "logPath" : "\/Users\/fortoer\/Library\/Logs\/CoreSimulator\/61410EF0-8FF7-4E3D-B36C-793FF0BAB303",
+                   "udid" : "61410EF0-8FF7-4E3D-B36C-793FF0BAB303",
+                   "isAvailable" : true,
+                   "logPathSize" : 200704,
+                   "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
+                   "state" : "Booted",
+                   "name" : "iPhone 12 Pro"
+                 }
+               ]
+             }
+           }
+[+2536 ms] [
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,6",
+               "identifier" : "22631F63-7A44-465F-80BC-21AD4DEEC700",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-se3-1",
+               "modelName" : "iPhone SE (3rd generation)",
+               "name" : "iPhone SE (3rd generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,1",
+               "identifier" : "EB358F6D-1883-4B0B-B604-15F86CFE31EF",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-mini6-1",
+               "modelName" : "iPad mini (6th generation)",
+               "name" : "iPad mini (6th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad13,17",
+               "identifier" : "E006B366-6666-4E3C-B3CF-C9A6A2317EE8",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-air5-1",
+               "modelName" : "iPad Air (5th generation)",
+               "name" : "iPad Air (5th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,7",
+               "identifier" : "9930D541-AFB5-4E46-A0B0-31FE5AF07D05",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-1",
+               "modelName" : "iPhone 14",
+               "name" : "iPhone 14",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,5",
+               "identifier" : "ED0AE4FA-15D1-4678-A29D-F8F62B581F3C",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-pro-12point9-6th-1",
+               "modelName" : "iPad Pro (12.9-inch) (6th generation)",
+               "name" : "iPad Pro (12.9-inch) (6th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone15,2",
+               "identifier" : "73F6BF81-3409-4CF4-A92F-1D12F357F725",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-pro-1",
+               "modelName" : "iPhone 14 Pro",
+               "name" : "iPhone 14 Pro",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,3",
+               "identifier" : "D6827294-0F23-4895-AC31-1A94A57AB73B",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-pro-11-4th-1",
+               "modelName" : "iPad Pro (11-inch) (4th generation)",
+               "name" : "iPad Pro (11-inch) (4th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,8",
+               "identifier" : "53BED6E7-5CF8-49C5-AD8D-F802D6DEA37F",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-plus-1",
+               "modelName" : "iPhone 14 Plus",
+               "name" : "iPhone 14 Plus",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone13,3",
+               "identifier" : "61410EF0-8FF7-4E3D-B36C-793FF0BAB303",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-12-pro-1",
+               "modelName" : "iPhone 12 Pro",
+               "name" : "iPhone 12 Pro",
+               "ignored" : false
+             },
+             {
+               "ignored" : false,
+               "modelCode" : "MacBookPro17,1",
+               "simulator" : false,
+               "modelName" : "MacBook Pro",
+               "operatingSystemVersion" : "13.4.1 (22F82)",
+               "identifier" : "00008103-001605321EEA001E",
+               "platform" : "com.apple.platform.macosx",
+               "architecture" : "arm64e",
+               "interface" : "usb",
+               "available" : true,
+               "name" : "My Mac",
+               "modelUTI" : "com.apple.macbookpro-13-retina-touchid-late-2020"
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone15,3",
+               "identifier" : "BDF6D50A-A0C3-42B7-86FA-429C975F2F28",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-pro-max-1",
+               "modelName" : "iPhone 14 Pro Max",
+               "name" : "iPhone 14 Pro Max",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad13,18",
+               "identifier" : "36D59C73-1265-40D7-9AA2-441EDCE674BE",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-10-1",
+               "modelName" : "iPad (10th generation)",
+               "name" : "iPad (10th generation)",
+               "ignored" : false
+             }
+           ]
+
+           2024-01-25 23:10:40.197 xcdevice[35994:157815] DVTCoreDeviceEnabledState: DVTCoreDeviceEnabledState_Disabled set via user default (DVTEnableCoreDevice=disabled)
+[   +6 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[   +7 ms] Downloading Web SDK...
+[ +891 ms] Content https://storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip md5 hash: P749kLeuzVQcMtz7BNuhQw==
+[+2079 ms] [
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,6",
+               "identifier" : "22631F63-7A44-465F-80BC-21AD4DEEC700",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-se3-1",
+               "modelName" : "iPhone SE (3rd generation)",
+               "name" : "iPhone SE (3rd generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,1",
+               "identifier" : "EB358F6D-1883-4B0B-B604-15F86CFE31EF",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-mini6-1",
+               "modelName" : "iPad mini (6th generation)",
+               "name" : "iPad mini (6th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad13,17",
+               "identifier" : "E006B366-6666-4E3C-B3CF-C9A6A2317EE8",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-air5-1",
+               "modelName" : "iPad Air (5th generation)",
+               "name" : "iPad Air (5th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,7",
+               "identifier" : "9930D541-AFB5-4E46-A0B0-31FE5AF07D05",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-1",
+               "modelName" : "iPhone 14",
+               "name" : "iPhone 14",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,5",
+               "identifier" : "ED0AE4FA-15D1-4678-A29D-F8F62B581F3C",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-pro-12point9-6th-1",
+               "modelName" : "iPad Pro (12.9-inch) (6th generation)",
+               "name" : "iPad Pro (12.9-inch) (6th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone15,2",
+               "identifier" : "73F6BF81-3409-4CF4-A92F-1D12F357F725",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-pro-1",
+               "modelName" : "iPhone 14 Pro",
+               "name" : "iPhone 14 Pro",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad14,3",
+               "identifier" : "D6827294-0F23-4895-AC31-1A94A57AB73B",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-pro-11-4th-1",
+               "modelName" : "iPad Pro (11-inch) (4th generation)",
+               "name" : "iPad Pro (11-inch) (4th generation)",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone14,8",
+               "identifier" : "53BED6E7-5CF8-49C5-AD8D-F802D6DEA37F",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-plus-1",
+               "modelName" : "iPhone 14 Plus",
+               "name" : "iPhone 14 Plus",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone13,3",
+               "identifier" : "61410EF0-8FF7-4E3D-B36C-793FF0BAB303",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-12-pro-1",
+               "modelName" : "iPhone 12 Pro",
+               "name" : "iPhone 12 Pro",
+               "ignored" : false
+             },
+             {
+               "ignored" : false,
+               "modelCode" : "MacBookPro17,1",
+               "simulator" : false,
+               "modelName" : "MacBook Pro",
+               "operatingSystemVersion" : "13.4.1 (22F82)",
+               "identifier" : "00008103-001605321EEA001E",
+               "platform" : "com.apple.platform.macosx",
+               "architecture" : "arm64e",
+               "interface" : "usb",
+               "available" : true,
+               "name" : "My Mac",
+               "modelUTI" : "com.apple.macbookpro-13-retina-touchid-late-2020"
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPhone15,3",
+               "identifier" : "BDF6D50A-A0C3-42B7-86FA-429C975F2F28",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.iphone-14-pro-max-1",
+               "modelName" : "iPhone 14 Pro Max",
+               "name" : "iPhone 14 Pro Max",
+               "ignored" : false
+             },
+             {
+               "simulator" : true,
+               "operatingSystemVersion" : "16.4 (20E247)",
+               "available" : true,
+               "platform" : "com.apple.platform.iphonesimulator",
+               "modelCode" : "iPad13,18",
+               "identifier" : "36D59C73-1265-40D7-9AA2-441EDCE674BE",
+               "architecture" : "arm64",
+               "modelUTI" : "com.apple.ipad-10-1",
+               "modelName" : "iPad (10th generation)",
+               "name" : "iPad (10th generation)",
+               "ignored" : false
+             }
+           ]
+
+           2024-01-25 23:10:40.192 xcdevice[35992:157812] DVTCoreDeviceEnabledState: DVTCoreDeviceEnabledState_Disabled set via user default (DVTEnableCoreDevice=disabled)
+[+36553 ms] Downloading Web SDK... (completed in 39.5s)
+[   +5 ms] executing: unzip -o -q /Users/fortoer/fvm/versions/3.13.6/bin/cache/downloads/storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip -d /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4
+[+5447 ms] Exit code 0 from: unzip -o -q /Users/fortoer/fvm/versions/3.13.6/bin/cache/downloads/storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip -d /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4
+[        ] executing: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/lib /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[ +100 ms] Exit code 0 from: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/lib /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[        ] building file list ... done
+           lib/
+           lib/_engine/
+           lib/_engine/engine.dart
+           lib/_engine/engine/
+           lib/_engine/engine/alarm_clock.dart
+           lib/_engine/engine/app_bootstrap.dart
+           lib/_engine/engine/browser_detection.dart
+           lib/_engine/engine/canvas_pool.dart
+           lib/_engine/engine/clipboard.dart
+           lib/_engine/engine/color_filter.dart
+           lib/_engine/engine/configuration.dart
+           lib/_engine/engine/dom.dart
+           lib/_engine/engine/embedder.dart
+           lib/_engine/engine/engine_canvas.dart
+           lib/_engine/engine/font_change_util.dart
+           lib/_engine/engine/font_fallback_data.dart
+           lib/_engine/engine/font_fallbacks.dart
+           lib/_engine/engine/fonts.dart
+           lib/_engine/engine/frame_reference.dart
+           lib/_engine/engine/global_styles.dart
+           lib/_engine/engine/html_image_codec.dart
+           lib/_engine/engine/image_decoder.dart
+           lib/_engine/engine/initialization.dart
+           lib/_engine/engine/interval_tree.dart
+           lib/_engine/engine/key_map.g.dart
+           lib/_engine/engine/keyboard_binding.dart
+           lib/_engine/engine/mouse_cursor.dart
+           lib/_engine/engine/noto_font.dart
+           lib/_engine/engine/onscreen_logging.dart
+           lib/_engine/engine/picture.dart
+           lib/_engine/engine/platform_dispatcher.dart
+           lib/_engine/engine/platform_views.dart
+           lib/_engine/engine/plugins.dart
+           lib/_engine/engine/pointer_binding.dart
+           lib/_engine/engine/pointer_converter.dart
+           lib/_engine/engine/profiler.dart
+           lib/_engine/engine/raw_keyboard.dart
+           lib/_engine/engine/renderer.dart
+           lib/_engine/engine/rrect_renderer.dart
+           lib/_engine/engine/safe_browser_api.dart
+           lib/_engine/engine/scene_painting.dart
+           lib/_engine/engine/semantics.dart
+           lib/_engine/engine/services.dart
+           lib/_engine/engine/shader_data.dart
+           lib/_engine/engine/shadow.dart
+           lib/_engine/engine/svg.dart
+           lib/_engine/engine/test_embedding.dart
+           lib/_engine/engine/util.dart
+           lib/_engine/engine/validators.dart
+           lib/_engine/engine/vector_math.dart
+           lib/_engine/engine/window.dart
+           lib/_engine/engine/canvaskit/
+           lib/_engine/engine/canvaskit/canvas.dart
+           lib/_engine/engine/canvaskit/canvaskit_api.dart
+           lib/_engine/engine/canvaskit/canvaskit_canvas.dart
+           lib/_engine/engine/canvaskit/color_filter.dart
+           lib/_engine/engine/canvaskit/embedded_views.dart
+           lib/_engine/engine/canvaskit/embedded_views_diff.dart
+           lib/_engine/engine/canvaskit/fonts.dart
+           lib/_engine/engine/canvaskit/image.dart
+           lib/_engine/engine/canvaskit/image_filter.dart
+           lib/_engine/engine/canvaskit/image_wasm_codecs.dart
+           lib/_engine/engine/canvaskit/image_web_codecs.dart
+           lib/_engine/engine/canvaskit/layer.dart
+           lib/_engine/engine/canvaskit/layer_scene_builder.dart
+           lib/_engine/engine/canvaskit/layer_tree.dart
+           lib/_engine/engine/canvaskit/mask_filter.dart
+           lib/_engine/engine/canvaskit/n_way_canvas.dart
+           lib/_engine/engine/canvaskit/native_memory.dart
+           lib/_engine/engine/canvaskit/painting.dart
+           lib/_engine/engine/canvaskit/path.dart
+           lib/_engine/engine/canvaskit/path_metrics.dart
+           lib/_engine/engine/canvaskit/picture.dart
+           lib/_engine/engine/canvaskit/picture_recorder.dart
+           lib/_engine/engine/canvaskit/platform_message.dart
+           lib/_engine/engine/canvaskit/raster_cache.dart
+           lib/_engine/engine/canvaskit/rasterizer.dart
+           lib/_engine/engine/canvaskit/renderer.dart
+           lib/_engine/engine/canvaskit/shader.dart
+           lib/_engine/engine/canvaskit/surface.dart
+           lib/_engine/engine/canvaskit/surface_factory.dart
+           lib/_engine/engine/canvaskit/text.dart
+           lib/_engine/engine/canvaskit/text_fragmenter.dart
+           lib/_engine/engine/canvaskit/util.dart
+           lib/_engine/engine/canvaskit/vertices.dart
+           lib/_engine/engine/html/
+           lib/_engine/engine/html/backdrop_filter.dart
+           lib/_engine/engine/html/bitmap_canvas.dart
+           lib/_engine/engine/html/canvas.dart
+           lib/_engine/engine/html/clip.dart
+           lib/_engine/engine/html/color_filter.dart
+           lib/_engine/engine/html/debug_canvas_reuse_overlay.dart
+           lib/_engine/engine/html/dom_canvas.dart
+           lib/_engine/engine/html/image_filter.dart
+           lib/_engine/engine/html/offset.dart
+           lib/_engine/engine/html/opacity.dart
+           lib/_engine/engine/html/painting.dart
+           lib/_engine/engine/html/path_to_svg_clip.dart
+           lib/_engine/engine/html/picture.dart
+           lib/_engine/engine/html/platform_view.dart
+           lib/_engine/engine/html/recording_canvas.dart
+           lib/_engine/engine/html/render_vertices.dart
+           lib/_engine/engine/html/renderer.dart
+           lib/_engine/engine/html/scene.dart
+           lib/_engine/engine/html/scene_builder.dart
+           lib/_engine/engine/html/shader_mask.dart
+           lib/_engine/engine/html/surface.dart
+           lib/_engine/engine/html/surface_stats.dart
+           lib/_engine/engine/html/transform.dart
+           lib/_engine/engine/html/path/
+           lib/_engine/engine/html/path/conic.dart
+           lib/_engine/engine/html/path/cubic.dart
+           lib/_engine/engine/html/path/path.dart
+           lib/_engine/engine/html/path/path_iterator.dart
+           lib/_engine/engine/html/path/path_metrics.dart
+           lib/_engine/engine/html/path/path_ref.dart
+           lib/_engine/engine/html/path/path_to_svg.dart
+           lib/_engine/engine/html/path/path_utils.dart
+           lib/_engine/engine/html/path/path_windings.dart
+           lib/_engine/engine/html/path/tangent.dart
+           lib/_engine/engine/html/shaders/
+           lib/_engine/engine/html/shaders/image_shader.dart
+           lib/_engine/engine/html/shaders/normalized_gradient.dart
+           lib/_engine/engine/html/shaders/shader.dart
+           lib/_engine/engine/html/shaders/shader_builder.dart
+           lib/_engine/engine/html/shaders/vertex_shaders.dart
+           lib/_engine/engine/js_interop/
+           lib/_engine/engine/js_interop/js_loader.dart
+           lib/_engine/engine/js_interop/js_promise.dart
+           lib/_engine/engine/js_interop/js_typed_data.dart
+           lib/_engine/engine/navigation/
+           lib/_engine/engine/navigation/history.dart
+           lib/_engine/engine/platform_views/
+           lib/_engine/engine/platform_views/content_manager.dart
+           lib/_engine/engine/platform_views/message_handler.dart
+           lib/_engine/engine/platform_views/slots.dart
+           lib/_engine/engine/pointer_binding/
+           lib/_engine/engine/pointer_binding/event_position_helper.dart
+           lib/_engine/engine/semantics/
+           lib/_engine/engine/semantics/accessibility.dart
+           lib/_engine/engine/semantics/checkable.dart
+           lib/_engine/engine/semantics/dialog.dart
+           lib/_engine/engine/semantics/focusable.dart
+           lib/_engine/engine/semantics/image.dart
+           lib/_engine/engine/semantics/incrementable.dart
+           lib/_engine/engine/semantics/label_and_value.dart
+           lib/_engine/engine/semantics/live_region.dart
+           lib/_engine/engine/semantics/scrollable.dart
+           lib/_engine/engine/semantics/semantics.dart
+           lib/_engine/engine/semantics/semantics_helper.dart
+           lib/_engine/engine/semantics/tappable.dart
+           lib/_engine/engine/semantics/text_field.dart
+           lib/_engine/engine/services/
+           lib/_engine/engine/services/buffers.dart
+           lib/_engine/engine/services/message_codec.dart
+           lib/_engine/engine/services/message_codecs.dart
+           lib/_engine/engine/services/serialization.dart
+           lib/_engine/engine/text/
+           lib/_engine/engine/text/canvas_paragraph.dart
+           lib/_engine/engine/text/font_collection.dart
+           lib/_engine/engine/text/fragmenter.dart
+           lib/_engine/engine/text/layout_fragmenter.dart
+           lib/_engine/engine/text/layout_service.dart
+           lib/_engine/engine/text/line_break_properties.dart
+           lib/_engine/engine/text/line_breaker.dart
+           lib/_engine/engine/text/measurement.dart
+           lib/_engine/engine/text/paint_service.dart
+           lib/_engine/engine/text/paragraph.dart
+           lib/_engine/engine/text/ruler.dart
+           lib/_engine/engine/text/text_direction.dart
+           lib/_engine/engine/text/unicode_range.dart
+           lib/_engine/engine/text/word_break_properties.dart
+           lib/_engine/engine/text/word_breaker.dart
+           lib/_engine/engine/text_editing/
+           lib/_engine/engine/text_editing/autofill_hint.dart
+           lib/_engine/engine/text_editing/composition_aware_mixin.dart
+           lib/_engine/engine/text_editing/input_action.dart
+           lib/_engine/engine/text_editing/input_type.dart
+           lib/_engine/engine/text_editing/text_capitalization.dart
+           lib/_engine/engine/text_editing/text_editing.dart
+           lib/_engine/engine/view_embedder/
+           lib/_engine/engine/view_embedder/hot_restart_cache_handler.dart
+           lib/_engine/engine/view_embedder/dimensions_provider/
+           lib/_engine/engine/view_embedder/dimensions_provider/custom_element_dimensions_provider.dart
+           lib/_engine/engine/view_embedder/dimensions_provider/dimensions_provider.dart
+           lib/_engine/engine/view_embedder/dimensions_provider/full_page_dimensions_provider.dart
+           lib/_engine/engine/view_embedder/embedding_strategy/
+           lib/_engine/engine/view_embedder/embedding_strategy/custom_element_embedding_strategy.dart
+           lib/_engine/engine/view_embedder/embedding_strategy/embedding_strategy.dart
+           lib/_engine/engine/view_embedder/embedding_strategy/full_page_embedding_strategy.dart
+           lib/_skwasm_impl/
+           lib/_skwasm_impl/skwasm_impl.dart
+           lib/_skwasm_impl/skwasm_impl/
+           lib/_skwasm_impl/skwasm_impl/canvas.dart
+           lib/_skwasm_impl/skwasm_impl/codecs.dart
+           lib/_skwasm_impl/skwasm_impl/filters.dart
+           lib/_skwasm_impl/skwasm_impl/font_collection.dart
+           lib/_skwasm_impl/skwasm_impl/image.dart
+           lib/_skwasm_impl/skwasm_impl/layers.dart
+           lib/_skwasm_impl/skwasm_impl/memory.dart
+           lib/_skwasm_impl/skwasm_impl/paint.dart
+           lib/_skwasm_impl/skwasm_impl/paragraph.dart
+           lib/_skwasm_impl/skwasm_impl/path.dart
+           lib/_skwasm_impl/skwasm_impl/path_metrics.dart
+           lib/_skwasm_impl/skwasm_impl/picture.dart
+           lib/_skwasm_impl/skwasm_impl/renderer.dart
+           lib/_skwasm_impl/skwasm_impl/scene_builder.dart
+           lib/_skwasm_impl/skwasm_impl/shaders.dart
+           lib/_skwasm_impl/skwasm_impl/surface.dart
+           lib/_skwasm_impl/skwasm_impl/vertices.dart
+           lib/_skwasm_impl/skwasm_impl/raw/
+           lib/_skwasm_impl/skwasm_impl/raw/raw_canvas.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_filters.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_fonts.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_geometry.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_image.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_memory.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_paint.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_path.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_path_metrics.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_picture.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_shaders.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_skdata.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_skstring.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_surface.dart
+           lib/_skwasm_impl/skwasm_impl/raw/raw_vertices.dart
+           lib/_skwasm_impl/skwasm_impl/raw/skwasm_module.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_line_metrics.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_paragraph.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_paragraph_builder.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_paragraph_style.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_strut_style.dart
+           lib/_skwasm_impl/skwasm_impl/raw/text/raw_text_style.dart
+           lib/_skwasm_stub/
+           lib/_skwasm_stub/skwasm_stub.dart
+           lib/_skwasm_stub/skwasm_stub/
+           lib/_skwasm_stub/skwasm_stub/renderer.dart
+           lib/_web_locale_keymap/
+           lib/_web_locale_keymap/web_locale_keymap.dart
+           lib/_web_locale_keymap/web_locale_keymap/
+           lib/_web_locale_keymap/web_locale_keymap/key_mappings.g.dart
+           lib/_web_locale_keymap/web_locale_keymap/locale_keymap.dart
+           lib/_web_test_fonts/
+           lib/_web_test_fonts/web_test_fonts.dart
+           lib/_web_test_fonts/web_test_fonts/
+           lib/_web_test_fonts/web_test_fonts/web_test_fonts.dart
+           lib/_web_unicode/
+           lib/_web_unicode/web_unicode.dart
+           lib/_web_unicode/web_unicode/
+           lib/_web_unicode/web_unicode/codegen/
+           lib/_web_unicode/web_unicode/codegen/line_break_properties.dart
+           lib/_web_unicode/web_unicode/codegen/word_break_properties.dart
+           lib/ui/
+           lib/ui/annotations.dart
+           lib/ui/canvas.dart
+           lib/ui/channel_buffers.dart
+           lib/ui/compositing.dart
+           lib/ui/geometry.dart
+           lib/ui/hash_codes.dart
+           lib/ui/initialization.dart
+           lib/ui/key.dart
+           lib/ui/lerp.dart
+           lib/ui/math.dart
+           lib/ui/natives.dart
+           lib/ui/painting.dart
+           lib/ui/path.dart
+           lib/ui/path_metrics.dart
+           lib/ui/platform_dispatcher.dart
+           lib/ui/pointer.dart
+           lib/ui/semantics.dart
+           lib/ui/text.dart
+           lib/ui/tile_mode.dart
+           lib/ui/ui.dart
+           lib/ui/window.dart
+           lib/ui/ui_web/
+           lib/ui/ui_web/src/
+           lib/ui/ui_web/src/ui_web.dart
+           lib/ui/ui_web/src/ui_web/
+           lib/ui/ui_web/src/ui_web/asset_manager.dart
+           lib/ui/ui_web/src/ui_web/initialization.dart
+           lib/ui/ui_web/src/ui_web/platform_view_registry.dart
+           lib/ui/ui_web/src/ui_web/plugins.dart
+           lib/ui/ui_web/src/ui_web/testing.dart
+           lib/ui/ui_web/src/ui_web/navigation/
+           lib/ui/ui_web/src/ui_web/navigation/platform_location.dart
+           lib/ui/ui_web/src/ui_web/navigation/url_strategy.dart
+           lib/ui_web/
+           lib/ui_web/ui_web.dart
+           lib/ui_web/ui_web/
+           lib/ui_web/ui_web/asset_manager.dart
+           lib/ui_web/ui_web/initialization.dart
+           lib/ui_web/ui_web/platform_view_registry.dart
+           lib/ui_web/ui_web/plugins.dart
+           lib/ui_web/ui_web/testing.dart
+           lib/ui_web/ui_web/navigation/
+           lib/ui_web/ui_web/navigation/platform_location.dart
+           lib/ui_web/ui_web/navigation/url_strategy.dart
+
+           sent 3117239 bytes  received 5952 bytes  6246382.00 bytes/sec
+           total size is 3097602  speedup is 0.99
+[        ] executing: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/libraries.json /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[   +5 ms] Exit code 0 from: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/libraries.json /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[        ] building file list ... done
+           libraries.json
+
+           sent 2443 bytes  received 42 bytes  4970.00 bytes/sec
+           total size is 2310  speedup is 0.93
+[        ] executing: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/kernel /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[+1029 ms] Exit code 12 from: rsync -8 -av --delete /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.t3pin4/kernel /Users/fortoer/fvm/versions/3.13.6/bin/cache/flutter_web_sdk
+[        ] building file list ... done
+           kernel/
+           kernel/dart2js_platform.dill
+           kernel/dart2js_platform_unsound.dill
+           kernel/ddc_outline.dill
+           kernel/ddc_outline_sound.dill
+           kernel/flutter_ddc_sdk.dill
+           kernel/flutter_ddc_sdk_sound.dill
+           kernel/amd-canvaskit-html-sound/
+           kernel/amd-canvaskit-html-sound/dart_sdk.js
+           kernel/amd-canvaskit-html-sound/dart_sdk.js.map
+[+1964 ms] Downloading Web SDK...
+[ +395 ms] Content https://storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip md5 hash: P749kLeuzVQcMtz7BNuhQw==
+[+26950 ms] Downloading Web SDK... (completed in 27.3s)
+[   +4 ms] executing: unzip -o -q /Users/fortoer/fvm/versions/3.13.6/bin/cache/downloads/storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip -d /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.mFAgBR
+[+3483 ms] Exit code 50 from: unzip -o -q /Users/fortoer/fvm/versions/3.13.6/bin/cache/downloads/storage.googleapis.com/flutter_infra_release/flutter/a794cf2681c6c9fe7b260e0e84de96298dc9c18b/flutter-web-sdk.zip -d /var/folders/ym/w2qg2z3s05b56t55pfnr2x8r0000gn/T/flutter_tools.M5pfFE/flutter_flutter-web-sdk.zip.mFAgBR
+[ +983 ms] "flutter run" took 83,173ms.
+[ +255 ms] ensureAnalyticsSent: 253ms
+[        ] Running 1 shutdown hook
+[   +1 ms] Shutdown hooks complete
+[        ] exiting with code 1
