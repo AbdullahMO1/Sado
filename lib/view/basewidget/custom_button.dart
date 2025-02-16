@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
   final String? leftIcon;
   final double? borderWidth;
 
-  const CustomButton(
+  CustomButton(
       {Key? key,
       this.onTap,
       required this.buttonText,
@@ -31,11 +31,17 @@ class CustomButton extends StatelessWidget {
       this.borderColor,
       this.borderWidth})
       : super(key: key);
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: onTap,
+      onPressed: () {
+        if (isLoading) return;
+        isLoading = true;
+        onTap?.call();
+        isLoading = false;
+      },
       style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
       child: Container(
         height: 45,

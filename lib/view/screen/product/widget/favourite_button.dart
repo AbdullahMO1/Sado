@@ -36,8 +36,8 @@ class FavouriteButton extends StatelessWidget {
           }
         },
         child: Container(
-          width: 28,
-          height: 28,
+          width: 40,
+          height: 40,
           decoration: BoxDecoration(
               color: Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(50),

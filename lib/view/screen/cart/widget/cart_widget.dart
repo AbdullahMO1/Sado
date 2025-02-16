@@ -124,20 +124,16 @@ class CartWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(children: [
-                          Expanded(
-                              child: Text(cartModel!.name!,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: textMedium.copyWith(
-                                      fontSize: Dimensions.fontSizeDefault,
-                                      color:
-                                          ColorResources.getReviewRattingColor(
-                                              context)))),
-                          const SizedBox(width: Dimensions.paddingSizeSmall)
-                        ]),
+                        Text(cartModel!.name!,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: textBold.copyWith(
+                                fontSize: Dimensions.fontSizeLarge,
+                                color: ColorResources.getReviewRattingColor(
+                                    context))),
+
                         const SizedBox(
-                          height: Dimensions.paddingSizeSmall,
+                          height: Dimensions.paddingSizeExtraSmall,
                         ),
 
                         Row(
@@ -152,9 +148,10 @@ class CartWidget extends StatelessWidget {
                                         color: Theme.of(context).hintColor,
                                         decoration: TextDecoration.lineThrough))
                                 : const SizedBox(),
-                            const SizedBox(
-                              width: Dimensions.fontSizeSmall,
-                            ),
+                            if (cartModel!.discount! > 0)
+                              const SizedBox(
+                                width: Dimensions.fontSizeSmall,
+                              ),
                             Text(
                               PriceConverter.convertPrice(
                                   context, cartModel!.price,
@@ -162,9 +159,8 @@ class CartWidget extends StatelessWidget {
                                   discountType: 'amount'),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: textBold.copyWith(
-                                  color: ColorResources.getPrimary(context),
-                                  fontSize: Dimensions.fontSizeLarge),
+                              style: textRegular.copyWith(
+                                  fontSize: Dimensions.fontSizeDefault),
                             ),
                           ],
                         ),
@@ -242,88 +238,90 @@ class CartWidget extends StatelessWidget {
                                       fontSize: Dimensions.fontSizeDefault),
                                 ),
                               ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Theme.of(context)
+                                      .primaryColor
+                                      .withOpacity(.075)),
+                              borderRadius: const BorderRadius.only(
+                                  bottomRight: Radius.circular(
+                                      Dimensions.paddingSizeExtraSmall),
+                                  topRight: Radius.circular(
+                                      Dimensions.paddingSizeExtraSmall))),
+                          height: 40,
+                          width: cartModel!.shippingType != 'order_wise'
+                              ? 130
+                              : (cartModel!.variant != null &&
+                                      cartModel!.variant!.isNotEmpty)
+                                  ? 115
+                                  : 100,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: Dimensions.paddingSizeSmall),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                cartModel!.increment!
+                                    ? Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: SizedBox(
+                                            width: 20,
+                                            height: 20,
+                                            child: CircularProgressIndicator(
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                                strokeWidth: 2)),
+                                      )
+                                    : QuantityButton(
+                                        index: index,
+                                        isIncrement: true,
+                                        quantity: cartModel!.quantity,
+                                        maxQty: cartModel!
+                                            .productInfo?.totalCurrentStock,
+                                        cartModel: cartModel,
+                                        minimumOrderQuantity: cartModel!
+                                            .productInfo!.minimumOrderQty,
+                                        digitalProduct:
+                                            cartModel!.productType == "digital"
+                                                ? true
+                                                : false),
+                                Text(cartModel!.quantity.toString(),
+                                    style: textRegular),
+                                cartModel!.decrement!
+                                    ? Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: SizedBox(
+                                            width: 20,
+                                            height: 20,
+                                            child: CircularProgressIndicator(
+                                              color: Theme.of(context)
+                                                  .primaryColor,
+                                              strokeWidth: 2,
+                                            )),
+                                      )
+                                    : QuantityButton(
+                                        isIncrement: false,
+                                        index: index,
+                                        quantity: cartModel!.quantity,
+                                        maxQty: cartModel!
+                                            .productInfo!.totalCurrentStock,
+                                        cartModel: cartModel,
+                                        minimumOrderQuantity: cartModel!
+                                            .productInfo!.minimumOrderQty,
+                                        digitalProduct:
+                                            cartModel!.productType == "digital"
+                                                ? true
+                                                : false,
+                                      ),
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   )),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor.withOpacity(.05),
-                        border: Border.all(
-                            color: Theme.of(context)
-                                .primaryColor
-                                .withOpacity(.075)),
-                        borderRadius: const BorderRadius.only(
-                            bottomRight: Radius.circular(
-                                Dimensions.paddingSizeExtraSmall),
-                            topRight: Radius.circular(
-                                Dimensions.paddingSizeExtraSmall))),
-                    width: 40,
-                    height: cartModel!.shippingType != 'order_wise'
-                        ? 130
-                        : (cartModel!.variant != null &&
-                                cartModel!.variant!.isNotEmpty)
-                            ? 115
-                            : 100,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: Dimensions.paddingSizeSmall),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          cartModel!.increment!
-                              ? Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SizedBox(
-                                      width: 20,
-                                      height: 20,
-                                      child: CircularProgressIndicator(
-                                          color: Theme.of(context).primaryColor,
-                                          strokeWidth: 2)),
-                                )
-                              : QuantityButton(
-                                  index: index,
-                                  isIncrement: true,
-                                  quantity: cartModel!.quantity,
-                                  maxQty:
-                                      cartModel!.productInfo?.totalCurrentStock,
-                                  cartModel: cartModel,
-                                  minimumOrderQuantity:
-                                      cartModel!.productInfo!.minimumOrderQty,
-                                  digitalProduct:
-                                      cartModel!.productType == "digital"
-                                          ? true
-                                          : false),
-                          Text(cartModel!.quantity.toString(),
-                              style: textRegular),
-                          cartModel!.decrement!
-                              ? Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SizedBox(
-                                      width: 20,
-                                      height: 20,
-                                      child: CircularProgressIndicator(
-                                        color: Theme.of(context).primaryColor,
-                                        strokeWidth: 2,
-                                      )),
-                                )
-                              : QuantityButton(
-                                  isIncrement: false,
-                                  index: index,
-                                  quantity: cartModel!.quantity,
-                                  maxQty:
-                                      cartModel!.productInfo!.totalCurrentStock,
-                                  cartModel: cartModel,
-                                  minimumOrderQuantity:
-                                      cartModel!.productInfo!.minimumOrderQty,
-                                  digitalProduct:
-                                      cartModel!.productType == "digital"
-                                          ? true
-                                          : false,
-                                ),
-                        ],
-                      ),
-                    ),
-                  )
                 ]),
           ),
         ),
@@ -388,7 +386,7 @@ class QuantityButton extends StatelessWidget {
                   : quantity! == minimumOrderQuantity!
                       ? CupertinoIcons.delete_solid
                       : CupertinoIcons.minus,
-              color: Colors.red,
+              color: Theme.of(context).primaryColor,
               size: 15),
         ),
       );

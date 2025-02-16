@@ -118,8 +118,11 @@ class _HomePageState extends State<HomePage> {
       getTranslated('discounted_product', context)
     ];
     return Scaffold(
+      extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
+        top: false,
+        bottom: false,
         child: RefreshIndicator(
           onRefresh: () async {
             await _loadData(true);
@@ -454,7 +457,7 @@ class _HomePageState extends State<HomePage> {
                         : const SizedBox(),
 
                     //Home category
-                    const HomeCategoryProductView(isHomePage: true),
+                    // const HomeCategoryProductView(isHomePage: true),
                     const SizedBox(height: Dimensions.homePagePadding),
 
                     //footer banner
@@ -598,7 +601,8 @@ class _HomePageState extends State<HomePage> {
                                   productType: ProductType.newArrival,
                                   scrollController: _scrollController),
                             ),
-                            const SizedBox(height: Dimensions.homePagePadding),
+                            const SizedBox(
+                                height: Dimensions.homePagePaddingVertical),
                           ],
                         ),
                       );

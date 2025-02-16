@@ -14,6 +14,7 @@ class Dimensions {
   static const double paddingSizeTwelve = 12.0;
   static const double paddingSizeDefault = 15.0;
   static const double homePagePadding = 16.0;
+  static const double homePagePaddingVertical = 100.0;
   static const double paddingSizeDefaultAddress = 17.0;
   static const double paddingSizeLarge = 20.0;
   static const double paddingSizeExtraLarge = 25.0;

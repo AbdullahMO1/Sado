@@ -386,7 +386,8 @@ class _MoreScreenState extends State<MoreScreen> {
                                   color: Theme.of(context).hintColor)),
                         ],
                       ),
-                    )
+                    ),
+                    const SizedBox(height: Dimensions.homePagePaddingVertical),
                   ]),
             ),
           ),

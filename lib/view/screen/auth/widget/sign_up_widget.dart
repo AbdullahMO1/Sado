@@ -18,6 +18,7 @@ import 'package:flutter_sado_ecommerce/view/basewidget/custom_textfield.dart';
 import 'package:flutter_sado_ecommerce/view/screen/dashboard/dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import 'otp_verification_screen.dart';
+import 'package:flutter_sado_ecommerce/utill/validation_utils.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
   final TextEditingController _referCodeController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
 
   final FocusNode _nameFocus = FocusNode();
   final FocusNode _emailFocus = FocusNode();
@@ -41,8 +43,10 @@ class SignUpWidgetState extends State<SignUpWidget> {
   final FocusNode _passwordFocus = FocusNode();
   final FocusNode _confirmPasswordFocus = FocusNode();
   final FocusNode _referCodeFocus = FocusNode();
+  final FocusNode _lastNameFocus = FocusNode();
 
   RegisterModel register = RegisterModel();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isPasswordComplex(String password) {
     RegExp regex =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
@@ -127,6 +131,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     _referCodeController.dispose();
+    _lastNameController.dispose();
     super.dispose();
   }
 
@@ -135,21 +140,39 @@ class SignUpWidgetState extends State<SignUpWidget> {
     return Padding(
       padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
       child: Form(
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: Dimensions.paddingSizeLarge),
-            // Name Field
-
+            // First Name Field
             buildInputField(
               context: context,
               title: getTranslated('first_name', context)!,
               hintText: getTranslated('enter_first_name', context)!,
               controller: _nameController,
               focusNode: _nameFocus,
+              nextFocus: _lastNameFocus,
+              inputType: TextInputType.name,
+              prefixIcon: Images.username,
+              validator: (value) =>
+                  ValidationUtils.validateFirstName(value, context),
+            ),
+            const SizedBox(
+                height: Dimensions.paddingSizeSmall), // Default padding
+
+            // Last Name Field
+            buildInputField(
+              context: context,
+              title: getTranslated('last_name', context)!,
+              hintText: getTranslated('enter_last_name', context)!,
+              controller: _lastNameController,
+              focusNode: _lastNameFocus,
               nextFocus: _emailFocus,
               inputType: TextInputType.name,
               prefixIcon: Images.username,
+              validator: (value) =>
+                  ValidationUtils.validateFirstName(value, context),
             ),
             const SizedBox(
                 height: Dimensions.paddingSizeSmall), // Default padding
@@ -164,6 +187,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
               nextFocus: _phoneFocus,
               inputType: TextInputType.emailAddress,
               prefixIcon: Images.email,
+              validator: (value) =>
+                  ValidationUtils.validateEmail(value, context),
             ),
             const SizedBox(
                 height: Dimensions.paddingSizeSmall), // Default padding
@@ -178,6 +203,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
               nextFocus: _passwordFocus,
               inputType: TextInputType.phone,
               prefixIcon: Images.phone,
+              validator: (value) =>
+                  ValidationUtils.validatePhone(value, context),
             ),
             const SizedBox(
                 height: Dimensions.paddingSizeSmall), // Default padding
@@ -192,6 +219,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
               nextFocus: _confirmPasswordFocus,
               isPassword: true,
               prefixIcon: Images.lock,
+              validator: (value) =>
+                  ValidationUtils.validatePassword(value, context),
             ),
             const SizedBox(
                 height: Dimensions.paddingSizeSmall), // Default padding
@@ -206,6 +235,8 @@ class SignUpWidgetState extends State<SignUpWidget> {
               nextFocus: _referCodeFocus,
               isPassword: true,
               prefixIcon: Images.lock,
+              validator: (value) => ValidationUtils.validateConfirmPassword(
+                  value, _passwordController.text, context),
             ),
             const SizedBox(
                 height: Dimensions.paddingSizeSmall), // Default padding
@@ -225,10 +256,20 @@ class SignUpWidgetState extends State<SignUpWidget> {
                     Dimensions.paddingSizeOverLarge), // Spacing before button
 
             // Sign Up Button
-            CustomButton(
-              buttonText: getTranslated('sign_up', context)!,
-              onTap: () => _handleSignUp(context),
-            ),
+            Consumer<AuthProvider>(builder: (context, authProvider, _) {
+              return Provider.of<AuthProvider>(context).isLoading
+                  ? Center(
+                      child: CircularProgressIndicator.adaptive(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    )
+                  : CustomButton(
+                      buttonText: getTranslated('sign_up', context)!,
+                      onTap: () => _handleSignUp(context),
+                    );
+            }),
           ],
         ),
       ),
@@ -247,6 +288,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
     TextInputAction inputAction = TextInputAction.next,
     bool isPassword = false,
     bool isRequired = true,
+    String? Function(String?)? validator,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -273,6 +315,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
           inputAction: inputAction,
           isPassword: isPassword,
           prefixIcon: prefixIcon,
+          validator: validator,
         ),
         const SizedBox(height: Dimensions.paddingSizeDefault),
       ],
@@ -281,6 +324,7 @@ class SignUpWidgetState extends State<SignUpWidget> {
 
   void _handleSignUp(BuildContext context) {
     String firstName = _nameController.text.trim();
+    String lastName = _lastNameController.text.trim();
     String email = _emailController.text.trim();
     String phoneNumber =
         Provider.of<AuthProvider>(context, listen: false).countryDialCode +
@@ -289,31 +333,9 @@ class SignUpWidgetState extends State<SignUpWidget> {
     String confirmPassword = _confirmPasswordController.text.trim();
     String referCode = _referCodeController.text.trim();
 
-    if (firstName.isEmpty) {
-      showCustomSnackBar(
-          getTranslated('first_name_field_is_required', context), context);
-    } else if (email.isEmpty) {
-      showCustomSnackBar(getTranslated('email_is_required', context), context);
-    } else if (EmailChecker.isNotValid(email)) {
-      showCustomSnackBar(
-          getTranslated('enter_valid_email_address', context), context);
-    } else if (password.length < 8) {
-      showCustomSnackBar(
-          getTranslated('minimum_password_length', context), context);
-    } else if (password.isEmpty) {
-      showCustomSnackBar(
-          getTranslated('password_is_required', context), context);
-    } else if (confirmPassword.isEmpty) {
-      showCustomSnackBar(
-          getTranslated('confirm_password_must_be_required', context), context);
-    } else if (password != confirmPassword) {
-      showCustomSnackBar(
-          getTranslated('password_did_not_match', context), context);
-    } else if (!isPasswordComplex(password)) {
-      showCustomSnackBar(
-          getTranslated('password_complexity_requirements', context), context);
-    } else {
+    if (formKey.currentState!.validate()) {
       register.fName = firstName;
+      register.lName = lastName;
       register.email = email;
       register.phone = phoneNumber;
       register.password = password;

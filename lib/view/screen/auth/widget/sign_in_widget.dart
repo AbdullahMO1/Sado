@@ -254,7 +254,7 @@ class SignInWidgetState extends State<SignInWidget> {
               margin: const EdgeInsets.only(bottom: 20, top: 30),
               child: Provider.of<AuthProvider>(context).isLoading
                   ? Center(
-                      child: CircularProgressIndicator(
+                      child: CircularProgressIndicator.adaptive(
                         valueColor: AlwaysStoppedAnimation<Color>(
                           Theme.of(context).primaryColor,
                         ),

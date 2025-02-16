@@ -62,56 +62,52 @@ class _BottomCartViewState extends State<BottomCartView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 120,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: Theme.of(context).highlightColor,
+        color: Color(0xFFF6FBFF),
         borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-        boxShadow: [
-          BoxShadow(
-              color: Theme.of(context).hintColor,
-              blurRadius: .5,
-              spreadRadius: .1)
-        ],
+            topLeft: Radius.circular(25), topRight: Radius.circular(25)),
       ),
-      child: Row(children: [
-        Expanded(
-            flex: 3,
-            child: Padding(
-              padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
-              child: Stack(children: [
-                GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const CartScreen()));
-                    },
-                    child: Image.asset(Images.cartArrowDownImage,
-                        color: ColorResources.getPrimary(context))),
-                Positioned(
-                  top: 0,
-                  right: 10,
-                  child:
-                      Consumer<CartProvider>(builder: (context, cart, child) {
-                    return Container(
-                      height: 17,
-                      width: 17,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: ColorResources.getPrimary(context),
-                      ),
-                      child: Text(
-                        cart.cartList.length.toString(),
-                        style: titilliumSemiBold.copyWith(
-                            fontSize: Dimensions.fontSizeExtraSmall,
-                            color: Theme.of(context).highlightColor),
-                      ),
-                    );
-                  }),
-                )
-              ]),
-            )),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        SizedBox(
+          width: 55,
+          child: Padding(
+            padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+            child: Stack(children: [
+              GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const CartScreen()));
+                  },
+                  child: Image.asset(Images.cartArrowDownImage,
+                      height: 30,
+                      width: 30,
+                      color: ColorResources.getPrimary(context))),
+              Positioned(
+                top: 0,
+                right: 10,
+                child: Consumer<CartProvider>(builder: (context, cart, child) {
+                  return Container(
+                    height: 17,
+                    width: 17,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: ColorResources.getPrimary(context),
+                    ),
+                    child: Text(
+                      cart.cartList.length.toString(),
+                      style: titilliumSemiBold.copyWith(
+                          fontSize: Dimensions.fontSizeExtraSmall,
+                          color: Theme.of(context).highlightColor),
+                    ),
+                  );
+                }),
+              )
+            ]),
+          ),
+        ),
         Expanded(
             flex: 11,
             child: InkWell(

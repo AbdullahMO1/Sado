@@ -88,27 +88,7 @@ class ProductImageView extends StatelessWidget {
                           bottom: 10,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(),
-                              const Spacer(),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: _indicators(context),
-                              ),
-                              const Spacer(),
-                              Provider.of<ProductDetailsProvider>(context)
-                                          .imageSliderIndex !=
-                                      null
-                                  ? Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: Dimensions.paddingSizeDefault,
-                                          bottom:
-                                              Dimensions.paddingSizeDefault),
-                                      child: Text(
-                                          '${Provider.of<ProductDetailsProvider>(context).imageSliderIndex! + 1}/${productModel!.images!.length.toString()}'),
-                                    )
-                                  : const SizedBox(),
-                            ],
+                            children: _indicators(context),
                           ),
                         ),
                         Positioned(
