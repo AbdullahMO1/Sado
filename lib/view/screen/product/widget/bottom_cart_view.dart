@@ -71,7 +71,7 @@ class _BottomCartViewState extends State<BottomCartView> {
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
-          width: 55,
+          width: 70,
           child: Padding(
             padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
             child: Stack(children: [
@@ -80,12 +80,20 @@ class _BottomCartViewState extends State<BottomCartView> {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const CartScreen()));
                   },
-                  child: Image.asset(Images.cartArrowDownImage,
-                      height: 30,
-                      width: 30,
-                      color: ColorResources.getPrimary(context))),
+                  child: Container(
+                    padding:
+                        const EdgeInsets.all(Dimensions.paddingSizeDefault),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFE0ECF6),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset(Images.cartArrowDownImage,
+                        height: 30,
+                        width: 30,
+                        color: ColorResources.getPrimary(context)),
+                  )),
               Positioned(
-                top: 0,
+                top: 10,
                 right: 10,
                 child: Consumer<CartProvider>(builder: (context, cart, child) {
                   return Container(

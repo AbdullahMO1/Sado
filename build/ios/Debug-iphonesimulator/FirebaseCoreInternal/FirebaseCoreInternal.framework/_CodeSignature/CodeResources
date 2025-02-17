@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		ZdqqRpnwpdVg5KMpiET3StLhHI8=
+		sz8fLOtesUi2vKGs2rlQaQA8tB0=
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		jOWULeq053IZ5uBLu05Qlb2+378=
+		SjG1FG8rS61l8FCtNS8sgC3Rtfg=
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wOgsoFD65X2uMJoxNS/DqNTywf0=
+		jWK6THs39G54XwQLZ+ck+dAuEXM=
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qfqyt5jBN5NA8hn6rfKRuCxH5YI=
+		W/xkop85G4IJHaN3ZZvKvvkNKoI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -95,14 +95,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WFSWD0GUPsf7AbCaKn7uAoDmZIuDZKgKh48yIfSutYY=
+			8JWkgY80ztLZyToxSvc4zbVyQG+g8S7iD0+TM9Vcl/8=
 			</data>
 		</dict>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Fq5la4lHvwBbsVx+5vFKLIZZ5VgpaFTseoKP/HElfs=
+			dM/RvPvM3rILEA0shbrovMeJVsZo9HdNjq4W421is6A=
 			</data>
 		</dict>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BAOfg21ecxycdeDSh+AjuGroMZ34dlR8VWBAKm++Kdo=
+			1ITpbDAl/nuGvQJ46ksFV8yeI+BZ+p+uT33KIKXEXQc=
 			</data>
 		</dict>
 		<key>Modules/FirebaseCoreInternal.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LQgCwJbNMJXO/EhmoCV8WcJc2wQ6OzZ7XPtNLuMQXks=
+			KbdcPIQuWLIxwemwOEi8yDqektLMjih42qGTtAu853Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
