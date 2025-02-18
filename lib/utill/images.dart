@@ -201,4 +201,5 @@ class Images {
   static const String roomDesign = 'assets/images/room_design.png';
   static const String best = 'assets/images/best.png';
   static const String trending = 'assets/images/tend.svg';
+  static const String noDataImage = 'assets/images/no_data.png';
 }

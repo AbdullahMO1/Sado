@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.sado.ksa.app-mergeReleaseResources-66:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "/Users/abdullahmohammed/.gradle/caches/transforms-3/7de0ccc429b669d529da4f7606171b31/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}

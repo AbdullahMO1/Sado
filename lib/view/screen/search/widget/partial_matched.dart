@@ -163,6 +163,7 @@ class _SearchSuggestionState extends State<SearchSuggestion> {
                                 onTap: () {
                                   setState(() {
                                     controller.clear();
+                                    searchProvider.cleanSearchProduct();
                                   });
                                 },
                                 child: const Icon(

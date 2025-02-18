@@ -1,4 +1,4 @@
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_sado_ecommerce/data/datasource/remote/dio/dio_client.dart';
 import 'package:flutter_sado_ecommerce/data/repository/auth_repo.dart';

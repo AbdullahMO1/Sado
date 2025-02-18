@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
         "single";
     Provider.of<FlashDealProvider>(context, listen: false)
         .getMegaDealList(true, true);
-    _loadData(false);
+    // _loadData(false);
   }
 
   @override

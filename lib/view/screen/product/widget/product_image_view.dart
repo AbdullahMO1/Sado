@@ -16,7 +16,7 @@ import 'package:flutter_sado_ecommerce/view/screen/compare/controller/compare_co
 import 'package:flutter_sado_ecommerce/view/screen/product/product_image_screen.dart';
 import 'package:flutter_sado_ecommerce/view/screen/product/widget/favourite_button.dart';
 import 'package:provider/provider.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ProductImageView extends StatelessWidget {
   final pd.ProductDetailsModel? productModel;

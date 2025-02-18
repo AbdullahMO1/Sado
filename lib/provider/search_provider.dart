@@ -5,6 +5,7 @@ import 'package:flutter_sado_ecommerce/data/repository/search_repo.dart';
 import 'package:flutter_sado_ecommerce/helper/api_checker.dart';
 import 'package:flutter_sado_ecommerce/main.dart';
 import 'package:flutter_sado_ecommerce/utill/app_constants.dart';
+import 'package:flutter_sado_ecommerce/view/basewidget/show_custom_snakbar.dart';
 import 'package:flutter_sado_ecommerce/view/screen/compare/controller/compare_controller.dart';
 import 'package:flutter_sado_ecommerce/view/screen/search/model/suggestion_product_model.dart';
 import 'package:provider/provider.dart';
@@ -50,9 +51,18 @@ class SearchProvider with ChangeNotifier {
 
   bool get isClear => _isClear;
 
+  bool _isSearchComplete = false;
+  bool get isSearchComplete => _isSearchComplete;
+
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+
   void cleanSearchProduct() {
     searchedProduct = null;
     _isClear = true;
+    _isSearchComplete = false;
+    _isLoading = false;
+    notifyListeners();
   }
 
   ProductModel? searchedProduct;
@@ -64,32 +74,41 @@ class SearchProvider with ChangeNotifier {
       String? priceMin,
       String? priceMax,
       required int offset}) async {
-    searchController.text = query;
-    ApiResponse apiResponse = await searchRepo!.getSearchProductList(
-        query, categoryIds, brandIds, sort, priceMin, priceMax, offset);
-    if (apiResponse.response != null &&
-        apiResponse.response!.statusCode == 200) {
-      if (offset == 1) {
-        searchedProduct = null;
-        if (ProductModel.fromJson(apiResponse.response!.data).products !=
-            null) {
-          searchedProduct = ProductModel.fromJson(apiResponse.response!.data);
+    _isLoading = true;
+    _isSearchComplete = true;
+    notifyListeners();
+
+    try {
+      searchController.text = query;
+      ApiResponse apiResponse = await searchRepo!.getSearchProductList(
+          query, categoryIds, brandIds, sort, priceMin, priceMax, offset);
+
+      if (apiResponse.response != null &&
+          apiResponse.response!.statusCode == 200) {
+        if (offset == 1) {
+          searchedProduct = null;
+          if (ProductModel.fromJson(apiResponse.response!.data).products !=
+              null) {
+            searchedProduct = ProductModel.fromJson(apiResponse.response!.data);
+          }
+        } else {
+          if (ProductModel.fromJson(apiResponse.response!.data).products !=
+              null) {
+            searchedProduct?.products?.addAll(
+                ProductModel.fromJson(apiResponse.response!.data).products!);
+            searchedProduct?.offset =
+                (ProductModel.fromJson(apiResponse.response!.data).offset);
+            searchedProduct?.totalSize =
+                (ProductModel.fromJson(apiResponse.response!.data).totalSize);
+          }
         }
       } else {
-        if (ProductModel.fromJson(apiResponse.response!.data).products !=
-            null) {
-          searchedProduct?.products?.addAll(
-              ProductModel.fromJson(apiResponse.response!.data).products!);
-          searchedProduct?.offset =
-              (ProductModel.fromJson(apiResponse.response!.data).offset);
-          searchedProduct?.totalSize =
-              (ProductModel.fromJson(apiResponse.response!.data).totalSize);
-        }
+        ApiChecker.checkApi(apiResponse);
       }
-    } else {
-      ApiChecker.checkApi(apiResponse);
+    } finally {
+      _isLoading = false;
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   TextEditingController searchController = TextEditingController();

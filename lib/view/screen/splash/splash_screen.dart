@@ -1,10 +1,22 @@
 import 'dart:async';
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sado_ecommerce/localization/language_constrants.dart';
+import 'package:flutter_sado_ecommerce/main.dart';
 import 'package:flutter_sado_ecommerce/notification/model/notification_body.dart';
 import 'package:flutter_sado_ecommerce/provider/auth_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/banner_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/brand_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/cart_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/category_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/featured_deal_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/home_category_product_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/notification_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/product_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/profile_provider.dart';
 import 'package:flutter_sado_ecommerce/provider/splash_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/top_seller_provider.dart';
+import 'package:flutter_sado_ecommerce/provider/wishlist_provider.dart';
 import 'package:flutter_sado_ecommerce/utill/color_resources.dart';
 import 'package:flutter_sado_ecommerce/utill/images.dart';
 import 'package:flutter_sado_ecommerce/view/basewidget/no_internet_screen.dart';
@@ -27,16 +39,50 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
   final GlobalKey<ScaffoldMessengerState> _globalKey = GlobalKey();
-  late StreamSubscription<ConnectivityResult> _onConnectivityChanged;
+  late StreamSubscription<List<ConnectivityResult>> _onConnectivityChanged;
+
+  Future<void> _loadData(bool reload) async {
+    await Provider.of<BannerProvider>(Get.context!, listen: false)
+        .getBannerList(reload);
+    await Provider.of<CategoryProvider>(Get.context!, listen: false)
+        .getCategoryList(reload);
+    await Provider.of<HomeCategoryProductProvider>(Get.context!, listen: false)
+        .getHomeCategoryProductList(reload);
+    await Provider.of<TopSellerProvider>(Get.context!, listen: false)
+        .getTopSellerList(reload);
+    await Provider.of<BrandProvider>(Get.context!, listen: false)
+        .getBrandList(reload);
+    await Provider.of<ProductProvider>(Get.context!, listen: false)
+        .getLatestProductList(1, reload: reload);
+    await Provider.of<ProductProvider>(Get.context!, listen: false)
+        .getFeaturedProductList('1', reload: reload);
+    await Provider.of<FeaturedDealProvider>(Get.context!, listen: false)
+        .getFeaturedDealList(reload);
+    await Provider.of<ProductProvider>(Get.context!, listen: false)
+        .getLProductList('1', reload: reload);
+    await Provider.of<ProductProvider>(Get.context!, listen: false)
+        .getRecommendedProduct();
+    await Provider.of<CartProvider>(Get.context!, listen: false)
+        .getCartDataAPI(Get.context!);
+    await Provider.of<NotificationProvider>(Get.context!, listen: false)
+        .getNotificationList(1);
+    if (Provider.of<AuthProvider>(Get.context!, listen: false).isLoggedIn()) {
+      await Provider.of<ProfileProvider>(Get.context!, listen: false)
+          .getUserInfo(Get.context!);
+      await Provider.of<WishListProvider>(Get.context!, listen: false)
+          .getWishList();
+    }
+  }
 
   @override
   void initState() {
     super.initState();
+    _loadData(false);
 
     bool firstTime = true;
     _onConnectivityChanged = Connectivity()
         .onConnectivityChanged
-        .listen((ConnectivityResult result) {
+        .listen((List<ConnectivityResult> result) {
       if (!firstTime) {
         bool isNotConnected = result != ConnectivityResult.wifi &&
             result != ConnectivityResult.mobile;

@@ -1,8 +1,6 @@
 # This is a generated file; do not edit or check into version control.
 audio_session=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/audio_session-0.1.23/
-connectivity=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/connectivity-3.0.6/
-connectivity_for_web=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/connectivity_for_web-0.4.0+1/
-connectivity_macos=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/connectivity_macos-0.2.1+2/
+connectivity_plus=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/connectivity_plus-6.1.3/
 emoji_picker_flutter=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/emoji_picker_flutter-4.2.0/
 file_selector_linux=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.3+2/
 file_selector_macos=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.4+2/
@@ -70,7 +68,7 @@ phone_number=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/phone_number-2.1.
 pointer_interceptor=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/pointer_interceptor-0.10.1+2/
 pointer_interceptor_ios=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/pointer_interceptor_ios-0.10.1/
 pointer_interceptor_web=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/pointer_interceptor_web-0.10.2+1/
-share=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/share-2.0.4/
+share_plus=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/share_plus-10.1.4/
 shared_preferences=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/shared_preferences-2.3.5/
 shared_preferences_android=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.1/
 shared_preferences_foundation=/Users/abdullahmohammed/.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.5.4/

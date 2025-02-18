@@ -14,7 +14,7 @@ import 'package:flutter_sado_ecommerce/view/basewidget/custom_app_bar.dart';
 import 'package:flutter_sado_ecommerce/view/basewidget/show_custom_snakbar.dart';
 import 'package:flutter_sado_ecommerce/view/screen/refer_and_earn/widgets/refer_hint_view.dart';
 import 'package:provider/provider.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ReferAndEarnScreen extends StatelessWidget {
   const ReferAndEarnScreen({Key? key}) : super(key: key);

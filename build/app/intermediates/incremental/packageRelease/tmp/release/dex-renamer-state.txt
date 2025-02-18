@@ -1,0 +1,7 @@
+#Tue Feb 18 15:50:16 EET 2025
+base.1=/Users/abdullahmohammed/Desktop/Work_Projects/Freelance/Sado/build/app/intermediates/dex/release/minifyReleaseWithR8/classes2.dex
+path.1=classes2.dex
+base.0=/Users/abdullahmohammed/Desktop/Work_Projects/Freelance/Sado/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

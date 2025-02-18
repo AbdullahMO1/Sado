@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sado_ecommerce/localization/language_constrants.dart';
 import 'package:flutter_sado_ecommerce/main.dart';
@@ -11,19 +11,19 @@ class NetworkInfo {
   NetworkInfo(this.connectivity);
 
   Future<bool> get isConnected async {
-    ConnectivityResult result = await connectivity!.checkConnectivity();
-    return result != ConnectivityResult.none;
+    List<ConnectivityResult> result = await connectivity!.checkConnectivity();
+    return result.isNotEmpty && result[0] != ConnectivityResult.none;
   }
 
   static void checkConnectivity(BuildContext context) {
     bool firstTime = true;
     Connectivity()
         .onConnectivityChanged
-        .listen((ConnectivityResult result) async {
+        .listen((List<ConnectivityResult> result) async {
       if (!firstTime) {
         //bool isNotConnected = result != ConnectivityResult.wifi && result != ConnectivityResult.mobile;
         bool isNotConnected;
-        if (result == ConnectivityResult.none) {
+        if (result.contains(ConnectivityResult.none)) {
           isNotConnected = true;
         } else {
           isNotConnected =

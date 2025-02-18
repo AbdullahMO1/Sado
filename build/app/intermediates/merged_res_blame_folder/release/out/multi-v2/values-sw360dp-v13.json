@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.sado.ksa.app-mergeReleaseResources-66:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/abdullahmohammed/.gradle/caches/transforms-3/720d07cd5e7077616717fa99d34bda7e/transformed/preference-1.2.1/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "71",
+                        "endOffsets": "122"
+                    }
+                }
+            ]
+        }
+    ]
+}

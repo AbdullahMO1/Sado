@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">400808166018</string>
+    <string name="google_api_key" translatable="false">AIzaSyBl0V7WKY2AEbDJf55wAknkQDYDyXyScQ4</string>
+    <string name="google_app_id" translatable="false">1:400808166018:android:ec445e998d4b416b822a9b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBl0V7WKY2AEbDJf55wAknkQDYDyXyScQ4</string>
+    <string name="google_storage_bucket" translatable="false">sado-3141f.appspot.com</string>
+    <string name="project_id" translatable="false">sado-3141f</string>
+</resources>
